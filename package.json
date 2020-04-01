@@ -61,7 +61,8 @@
     "react": "16.13.0",
     "react-dom": "16.13.0",
     "react-hot-loader": "4.12.19",
-    "reinspect": "^1.1.0"
+    "reinspect": "^1.1.0",
+    "styled-components": "^5.0.1"
   },
   "resolutions": {
     "babel-core": "7.0.0-bridge.0"
