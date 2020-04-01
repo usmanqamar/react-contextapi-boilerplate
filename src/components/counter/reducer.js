@@ -1,12 +1,16 @@
+import produce from 'immer';
 import { INCREMENT, DECREMENT } from './actions';
 
-export default (state = 0, action) => {
-  switch (action.type) {
-    case INCREMENT:
-      return state + 1;
-    case DECREMENT:
-      return state - 1;
-    default:
-      return state;
-  }
-};
+const initialState = 0;
+
+export default (state = initialState, action) =>
+  produce(state, draft => {
+    switch (action.type) {
+      case INCREMENT:
+        return draft + 1;
+      case DECREMENT:
+        return draft - 1;
+      default:
+        return draft;
+    }
+  });
