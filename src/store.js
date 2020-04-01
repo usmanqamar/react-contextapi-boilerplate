@@ -1,5 +1,4 @@
 import React, { createContext, useContext, useReducer } from 'react';
-
 import reducer from './reducer';
 
 export const Context = createContext({});
@@ -13,7 +12,6 @@ const combinedReducers = (state = {}, action = {}) =>
 
 export default function Provider({ children }) {
   const [state, dispatch] = useReducer(combinedReducers, combinedReducers({}));
-
   return (
     <Context.Provider value={[state, dispatch]}>{children}</Context.Provider>
   );
