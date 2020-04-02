@@ -7,7 +7,9 @@
     "start": "cross-env NODE_ENV=development webpack-dev-server --info=false --open",
     "build": "cross-env NODE_ENV=production webpack",
     "format": "prettier --write 'src/**/*.js'",
-    "test": "jest --watchAll --coverage"
+    "test": "jest --watchAll --coverage",
+    "lint:eslint": "eslint --ignore-path .eslintignore",
+    "lint": "npm run lint:eslint -- . "
   },
   "lint-staged": {
     "*.{js,jsx,scss,css,md}": [

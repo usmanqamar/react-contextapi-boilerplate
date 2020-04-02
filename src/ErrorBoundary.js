@@ -11,6 +11,7 @@ class ErrorBoundary extends Component {
   }
 
   componentDidCatch(error, info) {
+    // eslint-disable-next-line no-console
     console.error('ErrorBoundary caught an error', error, info);
   }
 
@@ -21,7 +22,9 @@ class ErrorBoundary extends Component {
     if (hasError) {
       return (
         <h1>
-          There was an error with this page. <a href="/">Go to Homepage</a>
+          There was an error with this page.
+          {' '}
+          <a href="/">Go to Homepage</a>
         </h1>
       );
     }

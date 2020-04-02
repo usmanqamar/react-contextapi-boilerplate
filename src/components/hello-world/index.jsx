@@ -3,14 +3,12 @@ import PropTypes from 'prop-types';
 import style from './hello-world.css';
 import { Button } from './css';
 
-const HelloWorld = ({ title }) => {
-  return (
-    <div className={style['hello-world']}>
-      {title}
-      <Button>Hello Styled Components</Button>
-    </div>
-  );
-};
+const HelloWorld = ({ title }) => (
+  <div className={style['hello-world']}>
+    {title}
+    <Button>Hello Styled Components</Button>
+  </div>
+);
 
 HelloWorld.propTypes = {
   title: PropTypes.string,
