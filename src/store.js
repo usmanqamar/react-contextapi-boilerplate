@@ -1,5 +1,5 @@
-import React, { createContext, useContext, useReducer } from 'react';
-import reducer from './reducer';
+import React, { createContext, useContext, useReducer, useEffect } from 'react';
+import reducer from 'reducer';
 
 export const Context = createContext({});
 Context.displayName = 'Store';
@@ -11,7 +11,14 @@ const combinedReducers = (state = {}, action = {}) =>
   );
 
 export default function Provider({ children }) {
-  const [state, dispatch] = useReducer(combinedReducers, combinedReducers({}));
+  const [state, dispatch] = useReducer(
+    combinedReducers,
+    combinedReducers(JSON.parse(localStorage.getItem('state')) || {}),
+  );
+  useEffect(() => {
+    localStorage.setItem('state', JSON.stringify(state));
+  }, [state]);
+
   return (
     <Context.Provider value={[state, dispatch]}>{children}</Context.Provider>
   );
