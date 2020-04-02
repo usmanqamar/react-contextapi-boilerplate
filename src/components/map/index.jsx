@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  Map as LeafletMap, TileLayer, Marker, Popup,
+  TileLayer, Marker, Popup,
 } from 'react-leaflet';
 
-// @Todo: This css import doesn't work now
-// @Todo: Need to take a look in webpack config
-import './map.css';
+import { LeafletMap } from './css';
 
-const Map = ({ position }) => (
-  <LeafletMap center={position} zoom={13}>
+const Map = ({
+  position, zoom,
+}) => (
+  <LeafletMap center={position} zoom={zoom}>
     <TileLayer
       attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
       url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
@@ -27,10 +27,12 @@ const Map = ({ position }) => (
 
 Map.propTypes = {
   position: PropTypes.arrayOf(PropTypes.number),
+  zoom: PropTypes.number,
 };
 
 Map.defaultProps = {
   position: [51.505, -0.09],
+  zoom: 13,
 };
 
 export default Map;
