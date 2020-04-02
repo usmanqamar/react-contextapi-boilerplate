@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useReducer, useEffect } from 'react';
-import reducer from './reducer';
+import reducer from 'reducer';
 
 export const Context = createContext({});
 Context.displayName = 'Store';

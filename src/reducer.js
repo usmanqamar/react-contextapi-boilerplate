@@ -1,4 +1,4 @@
-import counter from './components/counter/reducer';
+import counter from 'components/counter/reducer';
 
 export default {
   counter,
