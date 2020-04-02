@@ -1,7 +1,7 @@
 {
   "parser": "babel-eslint",
-  "plugins": ["react", "jest", "prettier"],
-  "extends": ["airbnb", "plugin:prettier/recommended", "prettier/react"],
+  "plugins": ["react", "jest"],
+  "extends": ["airbnb"],
   "globals": {
     "React": true,
     "document": true,
@@ -80,7 +80,6 @@
     "import/no-unresolved": 0,
     "import/no-extraneous-dependencies": 0,
     "import/extensions": 0,
-    "babel/object-curly-spacing": 0,
     "react/no-danger": 0,
     "react/no-multi-comp": 1,
     "react/jsx-no-target-blank": 2,
@@ -110,7 +109,7 @@
     "object-curly-newline": ["error", {
       "ExportDeclaration": "never",
       "ImportDeclaration": {
-        "minProperties": 4,
+        "minProperties": 2,
         "multiline": true,
         "consistent": true
       },
